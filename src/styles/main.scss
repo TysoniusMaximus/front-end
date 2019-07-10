@@ -157,7 +157,10 @@ body {
   outline: 0 none;
   position: absolute;
   top: 50%;
-  
+
+  @media (min-width: $breakpoint) {
+    display: block;
+  }
 
   img {
     width: 20px;
