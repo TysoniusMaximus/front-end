@@ -1,5 +1,4 @@
 const path = require('path');
-const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -8,8 +7,8 @@ module.exports = {
   entry: './src/scripts/index.js',
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'build'),
-    publicPath: '/build/'
+    path: path.resolve(__dirname, 'build')
+    // publicPath: '/build/'
   },
   resolve: {
     extensions: ['.js']
@@ -32,7 +31,12 @@ module.exports = {
         test: [/.css$|.scss$/],
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              url: false
+            }
+          },
           'sass-loader'
         ]
       }
@@ -45,9 +49,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new CopyPlugin([
-      { from: 'src/assets', to: 'assets' }
-    ]),
     new MiniCssExtractPlugin({
       filename: 'style.css'
     })

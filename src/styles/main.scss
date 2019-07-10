@@ -44,19 +44,19 @@ body {
 }
 
 .carousel__slide--1 {
-  background-image: url('/assets/home_slide_1_mobile.jpg');
+  background-image: url('../assets/home_slide_1_mobile.jpg');
 
   @media (min-width: $breakpoint) {
-    background-image: url('/assets/home_slide_1.jpg');
+    background-image: url('../assets/home_slide_1.jpg');
   }  
 }
 
 .carousel__slide--2 {
-  background-image: url('/assets/home_slide_2_mobile.jpg');
+  background-image: url('../assets/home_slide_2_mobile.jpg');
 
   @media (min-width: $breakpoint) {
     align-items: flex-start;
-    background-image: url('/assets/home_slide_2.jpg');
+    background-image: url('../assets/home_slide_2.jpg');
     text-align: left;
 
     .carousel__content {
@@ -66,11 +66,11 @@ body {
 }
 
 .carousel__slide--3 {
-  background-image: url('/assets/home_slide_3_mobile.jpg');
+  background-image: url('../assets/home_slide_3_mobile.jpg');
   
   @media (min-width: $breakpoint) {
     align-items: flex-end;
-    background-image: url('/assets/home_slide_3.jpg');
+    background-image: url('../assets/home_slide_3.jpg');
     text-align: left;
 
     .carousel__content {
